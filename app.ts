@@ -1,9 +1,9 @@
 import express, { NextFunction, Request, Response } from "express";
-
 export const app = express();
 
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import { ErrorControllercha } from "./controllers/errorController";
 app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 app.use(
@@ -23,3 +23,5 @@ app.all("*", (req: Request, res: Response, next: NextFunction) => {
 
    next(err.message);
 });
+
+app.use(ErrorControllercha);
